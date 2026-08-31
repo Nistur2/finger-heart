@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width,
+    initial-scale=1.0,
+    maximum-scale=1.0,
+    user-scalable=no"
+>
 
-<title>
-Happy 13th Monthsary, Palangga ❤️
-</title>
-
+<title>Happy 13th Monthsary Palangga ❤️</title>
 
 <style>
 
 /* =========================================================
-   GLOBAL
+   RESET
 ========================================================= */
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html,
-body{
+body {
 
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 
-    overflow:hidden;
+    overflow: hidden;
 
-    background:#020604;
+    background: #020604;
 
     font-family:
         Arial,
         Helvetica,
         sans-serif;
-
 }
 
 
@@ -46,20 +48,20 @@ body{
    CAMERA
 ========================================================= */
 
-#video{
+#video {
 
-    position:fixed;
+    position: fixed;
 
-    inset:0;
+    inset: 0;
 
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 
-    object-fit:cover;
+    object-fit: cover;
 
-    transform:
-        scaleX(-1);
+    transform: scaleX(-1);
 
+    background: #020604;
 }
 
 
@@ -67,44 +69,40 @@ body{
    CANVAS
 ========================================================= */
 
-#canvas{
+#canvas {
 
-    position:fixed;
+    position: fixed;
 
-    inset:0;
+    inset: 0;
 
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 
-    pointer-events:none;
+    pointer-events: none;
 
-    transform:
-        scaleX(-1);
-
+    transform: scaleX(-1);
 }
 
 
 /* =========================================================
-   DARK CINEMATIC OVERLAY
+   DARK OVERLAY
 ========================================================= */
 
-.dark{
+.dark {
 
-    position:fixed;
+    position: fixed;
 
-    inset:0;
+    inset: 0;
 
-    pointer-events:none;
+    pointer-events: none;
 
     background:
-
         radial-gradient(
             circle at center,
-            transparent 25%,
-            rgba(0,0,0,.18) 70%,
-            rgba(0,0,0,.45)
+            transparent 20%,
+            rgba(0,0,0,.10) 55%,
+            rgba(0,0,0,.50) 100%
         );
-
 }
 
 
@@ -112,69 +110,74 @@ body{
    TOP MESSAGE
 ========================================================= */
 
-.message{
+.message {
 
-    position:fixed;
+    position: fixed;
 
-    z-index:10;
+    z-index: 10;
 
-    top:25px;
+    top: clamp(55px, 6vh, 70px);
 
-    left:50%;
+    left: 50%;
 
     transform:
         translateX(-50%);
 
-    width:90%;
+    width: 92%;
 
-    text-align:center;
+    max-width: 1000px;
 
-    pointer-events:none;
+    text-align: center;
 
+    pointer-events: none;
 }
 
 
-.message .small{
+.message .small {
 
-    color:#00ff9c;
+    color: #00ff9c;
 
-    font-family:monospace;
-
-    font-size:10px;
-
-    letter-spacing:4px;
-
-    margin-bottom:8px;
-
-}
-
-
-.message h1{
+    font-family: monospace;
 
     font-size:
-        clamp(26px,5vw,55px);
+        clamp(8px, 1.2vw, 13px);
 
-    color:white;
+    letter-spacing:
+        clamp(2px, .5vw, 6px);
+
+    margin-bottom: 8px;
 
     text-shadow:
-
-        0 0 15px
-        rgba(255,100,180,.5),
-
-        0 0 35px
-        rgba(255,100,180,.25);
-
+        0 0 12px
+        rgba(0,255,156,.6);
 }
 
 
-.message p{
+.message h1 {
 
-    color:#f6dce8;
+    color: white;
 
-    font-size:14px;
+    font-size:
+        clamp(22px, 4vw, 58px);
 
-    margin-top:7px;
+    line-height: 1.1;
 
+    text-shadow:
+        0 0 12px
+        rgba(255,100,180,.9),
+        0 0 35px
+        rgba(255,80,160,.5);
+}
+
+
+.message p {
+
+    margin-top: 8px;
+
+    color: #f7dce8;
+
+    font-size:
+        clamp(10px, 1.5vw, 17px);
 }
 
 
@@ -182,148 +185,234 @@ body{
    STATUS
 ========================================================= */
 
-.status{
+.status {
 
-    position:fixed;
+    position: fixed;
 
-    right:20px;
+    z-index: 30;
 
-    top:20px;
+    top: 15px;
 
-    z-index:20;
+    right: 15px;
 
-    padding:9px 13px;
+    padding:
+        8px 13px;
 
     background:
-        rgba(0,10,7,.75);
+        rgba(0,10,7,.78);
 
     border:
         1px solid
         rgba(0,255,156,.35);
 
-    color:#00ff9c;
+    color:
+        #00ff9c;
 
-    font-family:monospace;
+    font-family:
+        monospace;
 
-    font-size:10px;
-
-    letter-spacing:1px;
+    font-size:
+        clamp(8px, 1vw, 12px);
 
     backdrop-filter:
-        blur(7px);
+        blur(8px);
 
+    white-space:
+        nowrap;
 }
 
 
-.status-dot{
+.status-dot {
 
-    display:inline-block;
+    display: inline-block;
 
-    width:7px;
+    width: 7px;
+    height: 7px;
 
-    height:7px;
+    border-radius: 50%;
 
-    border-radius:50%;
-
-    background:#00ff9c;
+    background: #00ff9c;
 
     box-shadow:
-        0 0 14px #00ff9c;
+        0 0 14px
+        #00ff9c;
 
-    margin-right:6px;
-
+    margin-right: 5px;
 }
 
 
 /* =========================================================
-   FINGER HEART DETECTION INDICATOR
+   GESTURE STATUS
 ========================================================= */
 
-.gesture{
+.gesture {
 
-    position:fixed;
+    position: fixed;
 
-    z-index:20;
+    z-index: 30;
 
-    left:20px;
+    top: 15px;
 
-    top:20px;
+    left: 15px;
 
-    padding:10px 14px;
-
-    color:#ff91bd;
+    padding:
+        8px 13px;
 
     background:
-        rgba(20,5,12,.72);
+        rgba(20,5,12,.78);
 
     border:
         1px solid
         rgba(255,120,180,.35);
 
-    font-family:monospace;
+    color:
+        #ff91bd;
 
-    font-size:10px;
+    font-family:
+        monospace;
 
-    letter-spacing:1px;
+    font-size:
+        clamp(8px, 1vw, 12px);
 
     backdrop-filter:
-        blur(6px);
+        blur(8px);
 
+    white-space:
+        nowrap;
+
+    transition:
+        .3s;
 }
 
 
-.gesture.active{
+.gesture.active {
 
-    color:#fff;
+    color: white;
 
     border-color:
         #ff72ae;
 
     background:
-        rgba(255,60,140,.18);
+        rgba(255,60,140,.28);
 
     box-shadow:
-        0 0 25px
-        rgba(255,60,140,.25);
-
+        0 0 35px
+        rgba(255,60,140,.5);
 }
 
 
 /* =========================================================
-   BOTTOM MESSAGE
+   BOTTOM INSTRUCTION
 ========================================================= */
 
-.bottom{
+.bottom {
 
-    position:fixed;
+    position: fixed;
 
-    z-index:10;
+    z-index: 10;
 
-    bottom:20px;
+    bottom:
+        clamp(12px, 2vh, 25px);
 
-    left:50%;
+    left: 50%;
 
     transform:
         translateX(-50%);
 
-    width:90%;
+    width: 90%;
 
-    text-align:center;
+    text-align: center;
 
-    color:#efd8e2;
+    color: #efd8e2;
 
-    font-size:13px;
+    font-size:
+        clamp(9px, 1.5vw, 15px);
 
     text-shadow:
-        0 2px 10px #000;
+        0 2px 10px black;
 
+    pointer-events: none;
 }
 
 
-.bottom strong{
+.bottom strong {
 
-    color:#ff8dbb;
+    color: #ff8dbb;
+}
 
+
+/* =========================================================
+   LOVE MESSAGE
+========================================================= */
+
+.love-message {
+
+    position: fixed;
+
+    z-index: 100;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.05);
+
+    opacity: 0;
+
+    width: 94%;
+
+    max-width: 1100px;
+
+    text-align: center;
+
+    pointer-events: none;
+
+    transition:
+        transform .8s
+        cubic-bezier(.17,.89,.32,1.35),
+        opacity .5s;
+}
+
+
+.love-message.show {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+
+    opacity: 1;
+}
+
+
+.love-message h2 {
+
+    color: white;
+
+    font-size:
+        clamp(27px, 6vw, 82px);
+
+    line-height: 1.05;
+
+    text-shadow:
+        0 0 12px #ff5b9c,
+        0 0 35px #ff5b9c,
+        0 0 80px
+        rgba(255,80,150,.9);
+}
+
+
+.love-message p {
+
+    margin-top: 16px;
+
+    color: #ffd8e8;
+
+    font-size:
+        clamp(15px, 2.5vw, 27px);
+
+    text-shadow:
+        0 0 18px #ff6fae;
 }
 
 
@@ -331,85 +420,96 @@ body{
    START SCREEN
 ========================================================= */
 
-.start{
+.start {
 
-    position:fixed;
+    position: fixed;
 
-    inset:0;
+    inset: 0;
 
-    z-index:50;
+    z-index: 200;
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    justify-content:center;
+    justify-content: center;
+
+    padding: 20px;
 
     background:
-        rgba(1,5,3,.84);
+        rgba(1,5,3,.92);
 
     backdrop-filter:
-        blur(10px);
-
+        blur(12px);
 }
 
 
-.start-box{
+.start-box {
 
-    width:min(430px,90vw);
+    width:
+        min(430px,100%);
 
-    padding:40px 30px;
+    padding:
+        clamp(25px,6vw,45px)
+        clamp(20px,6vw,35px);
 
-    text-align:center;
+    text-align: center;
 
-    color:white;
+    color: white;
 
     background:
-        rgba(3,14,9,.95);
+        rgba(3,14,9,.97);
 
     border:
         1px solid
         rgba(0,255,156,.4);
 
     box-shadow:
-        0 0 70px
-        rgba(0,255,156,.12);
-
+        0 0 80px
+        rgba(0,255,156,.13);
 }
 
 
-.start-box .icon{
+.start-box .icon {
 
-    font-size:55px;
+    font-size:
+        clamp(40px,12vw,70px);
 
-    margin-bottom:15px;
-
+    margin-bottom: 12px;
 }
 
 
-.start-box h2{
+.start-box h2 {
 
-    margin-bottom:10px;
+    font-size:
+        clamp(20px,5vw,30px);
 
+    margin-bottom: 10px;
 }
 
 
-.start-box p{
+.start-box p {
 
-    color:#a7c9bb;
+    color: #a7c9bb;
 
-    font-size:13px;
+    font-size:
+        clamp(11px,2.5vw,14px);
 
-    line-height:1.65;
-
+    line-height: 1.65;
 }
 
 
-button{
+.start-box strong {
 
-    margin-top:22px;
+    color: #ff8dbb;
+}
 
-    padding:13px 25px;
+
+button {
+
+    margin-top: 22px;
+
+    padding: 14px 28px;
 
     background:
         rgba(0,255,156,.08);
@@ -418,101 +518,33 @@ button{
         1px solid
         rgba(0,255,156,.55);
 
-    color:#00ff9c;
+    color:
+        #00ff9c;
 
-    font-family:monospace;
+    font-family:
+        monospace;
 
-    font-weight:bold;
+    font-weight: bold;
 
-    letter-spacing:2px;
+    font-size:
+        clamp(10px,2vw,14px);
 
-    cursor:pointer;
+    letter-spacing: 2px;
 
+    cursor: pointer;
+
+    transition: .25s;
 }
 
 
-button:hover{
+button:hover {
 
     background:
-        rgba(0,255,156,.2);
+        rgba(0,255,156,.18);
 
     box-shadow:
         0 0 25px
         rgba(0,255,156,.25);
-
-}
-
-
-/* =========================================================
-   BIG LOVE MESSAGE
-========================================================= */
-
-.love-message{
-
-    position:fixed;
-
-    z-index:40;
-
-    left:50%;
-
-    top:50%;
-
-    transform:
-        translate(-50%,-50%)
-        scale(.2);
-
-    opacity:0;
-
-    width:90%;
-
-    text-align:center;
-
-    pointer-events:none;
-
-    transition:
-        transform .5s cubic-bezier(.17,.89,.32,1.4),
-        opacity .4s;
-
-}
-
-
-.love-message.show{
-
-    transform:
-        translate(-50%,-50%)
-        scale(1);
-
-    opacity:1;
-
-}
-
-
-.love-message h2{
-
-    font-size:
-        clamp(25px,6vw,65px);
-
-    color:white;
-
-    text-shadow:
-
-        0 0 10px #ff5b9c,
-
-        0 0 30px #ff5b9c,
-
-        0 0 60px rgba(255,80,150,.6);
-
-}
-
-
-.love-message p{
-
-    margin-top:12px;
-
-    color:#ffd8e8;
-
-    font-size:16px;
-
 }
 
 
@@ -520,34 +552,81 @@ button:hover{
    MOBILE
 ========================================================= */
 
-@media(max-width:600px){
+@media (max-width:480px) {
 
-    .message{
+    .message {
 
-        top:75px;
-
+        top: 70px;
     }
 
-    .message h1{
+    .message h1 {
 
-        font-size:27px;
-
+        font-size:
+            clamp(20px,7vw,30px);
     }
 
-    .status{
+    .message p {
 
-        top:18px;
-
-        right:18px;
-
+        font-size: 10px;
     }
 
-    .gesture{
+}
 
-        top:18px;
 
-        left:18px;
+/* =========================================================
+   LANDSCAPE
+========================================================= */
 
+@media (
+    max-height:500px
+)
+and (
+    orientation:landscape
+) {
+
+    .message {
+
+        top: 8px;
+    }
+
+    .message h1 {
+
+        font-size:
+            clamp(18px,4vw,32px);
+    }
+
+    .message p {
+
+        display: none;
+    }
+
+    .bottom {
+
+        display: none;
+    }
+
+    .start-box {
+
+        padding: 15px 25px;
+    }
+
+    .start-box .icon {
+
+        font-size: 35px;
+
+        margin-bottom: 5px;
+    }
+
+    .start-box p {
+
+        font-size: 11px;
+
+        line-height: 1.35;
+    }
+
+    button {
+
+        margin-top: 10px;
     }
 
 }
@@ -560,9 +639,9 @@ button:hover{
 <body>
 
 
-<!-- =====================================================
+<!-- =======================================================
      CAMERA
-====================================================== -->
+======================================================= -->
 
 <video
     id="video"
@@ -572,9 +651,9 @@ button:hover{
 </video>
 
 
-<!-- =====================================================
-     AI GRAPHICS
-====================================================== -->
+<!-- =======================================================
+     CANVAS
+======================================================= -->
 
 <canvas id="canvas"></canvas>
 
@@ -582,9 +661,9 @@ button:hover{
 <div class="dark"></div>
 
 
-<!-- =====================================================
-     HEADER
-====================================================== -->
+<!-- =======================================================
+     TITLE
+======================================================= -->
 
 <div class="message">
 
@@ -597,21 +676,23 @@ button:hover{
     </h1>
 
     <p>
-        Make a finger heart and watch the love bloom.
+        Your fingers bloom into lilies.
+        Make a finger heart for love. 🤏❤️
     </p>
 
 </div>
 
 
-<!-- =====================================================
-     STATUS
-====================================================== -->
+<!-- =======================================================
+     SYSTEM STATUS
+======================================================= -->
 
 <div class="status">
 
     <span class="status-dot"></span>
 
-    FLOWER AI:
+    SYSTEM:
+
     <b id="status">
         WAITING
     </b>
@@ -619,15 +700,16 @@ button:hover{
 </div>
 
 
-<!-- =====================================================
+<!-- =======================================================
      GESTURE STATUS
-====================================================== -->
+======================================================= -->
 
 <div
     class="gesture"
     id="gesture">
 
     🤏 FINGER HEART:
+
     <b id="gestureText">
         SEARCHING
     </b>
@@ -635,26 +717,32 @@ button:hover{
 </div>
 
 
-<!-- =====================================================
+<!-- =======================================================
      BOTTOM
-====================================================== -->
+======================================================= -->
 
 <div class="bottom">
 
-    Show your hand to the camera.
+    🖐️ Move your fingers —
+
+    <strong>
+        lilies bloom from your fingertips.
+    </strong>
 
     <br>
 
+    🤏 Make a finger heart —
+
     <strong>
-        Make a finger heart for me, Palangga. 🤏❤️
+        hearts will appear.
     </strong>
 
 </div>
 
 
-<!-- =====================================================
-     BIG LOVE MESSAGE
-====================================================== -->
+<!-- =======================================================
+     LOVE MESSAGE
+======================================================= -->
 
 <div
     class="love-message"
@@ -671,9 +759,9 @@ button:hover{
 </div>
 
 
-<!-- =====================================================
-     START SCREEN
-====================================================== -->
+<!-- =======================================================
+     START
+======================================================= -->
 
 <div
     class="start"
@@ -695,21 +783,29 @@ button:hover{
 
             <br><br>
 
-            Then make a
-            <strong>finger-heart gesture</strong>
-            with your hand.
+            🖐️ Your
+
+            <strong>
+                fingertips
+            </strong>
+
+            create lilies.
 
             <br><br>
 
-            Your fingertips will bloom
-            into flowers and hearts will
-            float around you.
+            🤏 Your
+
+            <strong>
+                finger heart
+            </strong>
+
+            creates hearts.
 
         </p>
 
         <button id="startButton">
 
-            START OUR LOVE
+            START OUR LOVE ❤️
 
         </button>
 
@@ -718,25 +814,17 @@ button:hover{
 </div>
 
 
-<!-- =====================================================
+<!-- =======================================================
      MEDIAPIPE
-====================================================== -->
+======================================================= -->
 
-<script src="
-https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
 
-<script src="
-https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
 
-<script src="
-https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
 
-<script src="
-https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
 
 
 <script>
@@ -774,33 +862,74 @@ const loveMessage =
 
 
 /* =========================================================
-   CANVAS
+   RESPONSIVE CANVAS
 ========================================================= */
 
-let W;
-let H;
+let W = 0;
+let H = 0;
 
 
-function resize(){
+function resizeCanvas() {
+
+    const dpr =
+        Math.min(
+            window.devicePixelRatio || 1,
+            2
+        );
 
     W =
-        canvas.width =
         window.innerWidth;
 
     H =
-        canvas.height =
         window.innerHeight;
+
+
+    canvas.width =
+        W * dpr;
+
+    canvas.height =
+        H * dpr;
+
+
+    canvas.style.width =
+        W + "px";
+
+    canvas.style.height =
+        H + "px";
+
+
+    ctx.setTransform(
+        dpr,
+        0,
+        0,
+        dpr,
+        0,
+        0
+    );
 
 }
 
 
 window.addEventListener(
     "resize",
-    resize
+    resizeCanvas
 );
 
 
-resize();
+window.addEventListener(
+    "orientationchange",
+    () => {
+
+        setTimeout(
+            resizeCanvas,
+            250
+        );
+
+    }
+);
+
+
+resizeCanvas();
 
 
 /* =========================================================
@@ -811,28 +940,39 @@ let handsData = [];
 
 
 /*
-    MediaPipe:
+    MediaPipe landmarks
 
-    0  wrist
-
-    4  thumb tip
-    8  index tip
-
-    12 middle
-    16 ring
-    20 pinky
+    4  = thumb
+    8  = index
+    12 = middle
+    16 = ring
+    20 = pinky
 */
 
-
 const FINGERTIPS = [
-
     4,
     8,
     12,
     16,
     20
-
 ];
+
+
+/* =========================================================
+   GESTURE STATE
+========================================================= */
+
+let fingerHeartDetected =
+    false;
+
+let previousFingerHeart =
+    false;
+
+let lastLoveTrigger =
+    0;
+
+const LOVE_COOLDOWN =
+    6500;
 
 
 /* =========================================================
@@ -842,66 +982,78 @@ const FINGERTIPS = [
 let flowers = [];
 
 
-class Flower{
+/* =========================================================
+   LILY CLASS
+========================================================= */
+
+class Lily {
 
     constructor(
         x,
         y
-    ){
+    ) {
 
-        this.x =
-            x;
+        this.x = x;
+        this.y = y;
 
-        this.y =
-            y;
+        this.targetX = x;
+        this.targetY = y;
 
-        this.targetX =
-            x;
+        this.bloom = 0;
 
-        this.targetY =
-            y;
+        this.life = 0;
 
-        this.bloom =
-            0;
+        this.maxLife =
+            130 +
+            Math.random() * 100;
+
+        this.size =
+            14 +
+            Math.random() * 12;
 
         this.rotation =
             Math.random() *
             Math.PI *
             2;
 
-        this.size =
-            15 +
-            Math.random()*12;
+        this.phase =
+            Math.random() *
+            Math.PI *
+            2;
 
-        this.life =
-            0;
+        this.petals = 6;
 
-        this.maxLife =
-            100 +
-            Math.random()*100;
+        this.bloomSpeed =
+            .045 +
+            Math.random() * .025;
 
     }
 
 
-    update(){
+    update() {
 
         this.x +=
             (
                 this.targetX -
                 this.x
-            ) * .18;
+            ) * .14;
 
 
         this.y +=
             (
                 this.targetY -
                 this.y
-            ) * .18;
+            ) * .14;
 
 
-        this.bloom +=
-            (1-this.bloom)
-            * .08;
+        if (
+            this.bloom < 1
+        ) {
+
+            this.bloom +=
+                this.bloomSpeed;
+
+        }
 
 
         this.life++;
@@ -909,7 +1061,7 @@ class Flower{
     }
 
 
-    draw(){
+    draw() {
 
         ctx.save();
 
@@ -921,75 +1073,83 @@ class Flower{
 
 
         ctx.rotate(
+
             this.rotation +
+
             Math.sin(
-                Date.now()*.001
-            )*.08
+                Date.now() * .001 +
+                this.phase
+            ) * .06
+
         );
+
+
+        const scale =
+            Math.min(
+                this.bloom,
+                1
+            );
 
 
         ctx.scale(
-            this.bloom,
-            this.bloom
+            scale,
+            scale
         );
 
 
-        /*
-            Glow
-        */
+        /* =================================================
+           STEM
+        ================================================= */
 
-        ctx.shadowBlur =
-            18;
-
-        ctx.shadowColor =
-            "#ff70b1";
-
-
-        /*
-            STEM
-        */
+        ctx.shadowBlur = 0;
 
         ctx.strokeStyle =
-            "#1ca56c";
+            "#15945b";
 
-        ctx.lineWidth =
-            3;
+        ctx.lineWidth = 3;
+
+        ctx.lineCap = "round";
+
 
         ctx.beginPath();
 
         ctx.moveTo(
             0,
-            8
+            5
         );
 
-        ctx.quadraticCurveTo(
+
+        ctx.bezierCurveTo(
             -8,
-            45,
+            35,
+            8,
+            60,
             -3,
-            90
+            105
         );
+
 
         ctx.stroke();
 
 
-        /*
-            LEAVES
-        */
+        /* =================================================
+           LEAVES
+        ================================================= */
 
         ctx.fillStyle =
-            "#168c58";
+            "#15945b";
 
 
         ctx.beginPath();
 
         ctx.ellipse(
-            -10,
-            60,
-            14,
+            -13,
+            62,
+            18,
             6,
             -.5,
             0,
-            Math.PI*2
+            Math.PI * 2
         );
 
         ctx.fill();
@@ -998,80 +1158,164 @@ class Flower{
         ctx.beginPath();
 
         ctx.ellipse(
-            9,
-            74,
-            14,
+            10,
+            80,
+            19,
             6,
             .5,
             0,
-            Math.PI*2
+            Math.PI * 2
         );
 
         ctx.fill();
 
 
-        /*
-            PETALS
-        */
+        /* =================================================
+           PETALS
+        ================================================= */
 
-        const petals = 5;
+        ctx.shadowBlur = 20;
+
+        ctx.shadowColor =
+            "rgba(255,150,205,.85)";
 
 
-        for(
-            let i=0;
-            i<petals;
+        for (
+            let i = 0;
+            i < this.petals;
             i++
-        ){
+        ) {
 
-            const angle =
+            const petalAngle =
                 (
-                    Math.PI*2 /
-                    petals
+                    Math.PI * 2 /
+                    this.petals
                 ) * i;
 
 
             ctx.save();
 
             ctx.rotate(
-                angle
+                petalAngle
+            );
+
+
+            const gradient =
+                ctx.createLinearGradient(
+                    0,
+                    -8,
+                    0,
+                    -50
+                );
+
+
+            gradient.addColorStop(
+                0,
+                "#fff8fc"
+            );
+
+            gradient.addColorStop(
+                .45,
+                "#ffd7e9"
+            );
+
+            gradient.addColorStop(
+                1,
+                "#ff91c2"
             );
 
 
             ctx.fillStyle =
-                "#ff79b4";
+                gradient;
 
 
             ctx.beginPath();
 
-            ctx.ellipse(
+
+            ctx.moveTo(
                 0,
-                -19,
-                11,
-                24,
-                0,
-                0,
-                Math.PI*2
+                5
             );
 
+
+            ctx.bezierCurveTo(
+                -14,
+                -5,
+                -18,
+                -28,
+                -5,
+                -46
+            );
+
+
+            ctx.bezierCurveTo(
+                -2,
+                -51,
+                5,
+                -51,
+                8,
+                -44
+            );
+
+
+            ctx.bezierCurveTo(
+                18,
+                -25,
+                14,
+                -7,
+                0,
+                5
+            );
+
+
+            ctx.closePath();
+
             ctx.fill();
+
+
+            /* Petal vein */
+
+            ctx.shadowBlur = 0;
+
+            ctx.strokeStyle =
+                "rgba(220,80,140,.35)";
+
+            ctx.lineWidth = 1.2;
+
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+                2,
+                0
+            );
+
+            ctx.quadraticCurveTo(
+                2,
+                -20,
+                2,
+                -43
+            );
+
+            ctx.stroke();
+
 
             ctx.restore();
 
         }
 
 
-        /*
-            CENTER
-        */
+        /* =================================================
+           CENTER
+        ================================================= */
 
-        ctx.shadowBlur =
-            12;
+        ctx.shadowBlur = 15;
 
         ctx.shadowColor =
-            "#ffd65b";
+            "#ffd84f";
 
         ctx.fillStyle =
-            "#ffd65b";
+            "#ffd84f";
 
 
         ctx.beginPath();
@@ -1079,12 +1323,79 @@ class Flower{
         ctx.arc(
             0,
             0,
-            8,
+            6,
             0,
-            Math.PI*2
+            Math.PI * 2
         );
 
         ctx.fill();
+
+
+        /* =================================================
+           STAMENS
+        ================================================= */
+
+        ctx.shadowBlur = 0;
+
+
+        for (
+            let i = 0;
+            i < 6;
+            i++
+        ) {
+
+            const a =
+                i *
+                Math.PI *
+                2 /
+                6;
+
+
+            const sx =
+                Math.cos(a) * 9;
+
+            const sy =
+                Math.sin(a) * 9;
+
+
+            ctx.strokeStyle =
+                "#d69a2b";
+
+            ctx.lineWidth = 1;
+
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+                0,
+                0
+            );
+
+            ctx.lineTo(
+                sx,
+                sy
+            );
+
+            ctx.stroke();
+
+
+            ctx.fillStyle =
+                "#e6ad3b";
+
+
+            ctx.beginPath();
+
+            ctx.arc(
+                sx,
+                sy,
+                2,
+                0,
+                Math.PI * 2
+            );
+
+            ctx.fill();
+
+        }
 
 
         ctx.restore();
@@ -1095,16 +1406,39 @@ class Flower{
 
 
 /* =========================================================
-   CREATE FLOWER
+   SCREEN POINT
 ========================================================= */
 
-function createFlower(
+function screenPoint(
+    landmark
+) {
+
+    return {
+
+        x:
+            (1 - landmark.x) *
+            W,
+
+        y:
+            landmark.y *
+            H
+
+    };
+
+}
+
+
+/* =========================================================
+   CREATE LILY
+========================================================= */
+
+function createLily(
     x,
     y
-){
+) {
 
     flowers.push(
-        new Flower(
+        new Lily(
             x,
             y
         )
@@ -1114,149 +1448,112 @@ function createFlower(
 
 
 /* =========================================================
-   CONVERT LANDMARK
+   FINGERTIP FLOWERS
 ========================================================= */
 
-function screenPoint(
-    landmark
-){
+function updateFlowers() {
 
-    return {
+    /*
+     * IMPORTANT:
+     *
+     * FLOWERS ARE NOT CONNECTED
+     * TO THE FINGER-HEART STATE.
+     *
+     * Any detected hand can
+     * create lilies.
+     */
 
-        x:
-            (1-landmark.x)
-            * W,
+    if (
+        !handsData.length
+    ) {
 
-        y:
-            landmark.y
-            * H
+        return;
 
-    };
-
-}
-
-
-/* =========================================================
-   FLOWER TRACKING
-========================================================= */
-
-function updateFlowers(){
-
-    const points = [];
+    }
 
 
-    handsData.forEach(
-        hand => {
-
-            FINGERTIPS.forEach(
-                index => {
-
-                    points.push(
-                        screenPoint(
-                            hand[index]
-                        )
-                    );
-
-                }
-            );
-
-        }
-    );
+    const hand =
+        handsData[0];
 
 
-    points.forEach(
-        point => {
+    /*
+     * Create a lily around
+     * EACH fingertip.
+     */
 
-            let closest =
-                null;
+    FINGERTIPS.forEach(
+        fingertipIndex => {
 
-            let distance =
-                Infinity;
-
-
-            flowers.forEach(
-                flower => {
-
-                    const dx =
-                        flower.targetX -
-                        point.x;
-
-                    const dy =
-                        flower.targetY -
-                        point.y;
+            const tip =
+                hand[
+                    fingertipIndex
+                ];
 
 
-                    const d =
-                        Math.sqrt(
-                            dx*dx +
-                            dy*dy
-                        );
-
-
-                    if(
-                        d < distance
-                    ){
-
-                        distance =
-                            d;
-
-                        closest =
-                            flower;
-
-                    }
-
-                }
-            );
-
-
-            if(
-                !closest ||
-                distance > 80
-            ){
-
-                createFlower(
-                    point.x,
-                    point.y
+            const point =
+                screenPoint(
+                    tip
                 );
 
-                closest =
-                    flowers[
-                        flowers.length-1
-                    ];
+
+            /*
+             * Small random chance
+             * each frame.
+             */
+
+            if (
+                Math.random() < .08
+            ) {
+
+                createLily(
+
+                    point.x +
+                    (
+                        Math.random() *
+                        14 -
+                        7
+                    ),
+
+                    point.y +
+                    (
+                        Math.random() *
+                        14 -
+                        7
+                    )
+
+                );
 
             }
 
-
-            closest.targetX =
-                point.x;
-
-            closest.targetY =
-                point.y;
-
-            closest.life =
-                0;
-
         }
     );
 
 
-    flowers =
-        flowers.filter(
-            flower =>
-                flower.life <
-                flower.maxLife
+    /*
+     * Maximum flowers.
+     */
+
+    if (
+        flowers.length > 55
+    ) {
+
+        flowers.splice(
+            0,
+            flowers.length - 55
         );
+
+    }
 
 }
 
 
 /* =========================================================
-   DRAW HAND AI NETWORK
+   HAND NETWORK
 ========================================================= */
 
 function drawHandNetwork(
     landmarks
-){
+) {
 
     const points =
         landmarks.map(
@@ -1300,11 +1597,11 @@ function drawHandNetwork(
 
     ctx.save();
 
-    ctx.strokeStyle =
-        "rgba(0,255,156,.38)";
 
-    ctx.lineWidth =
-        1;
+    ctx.strokeStyle =
+        "rgba(0,255,156,.32)";
+
+    ctx.lineWidth = 1;
 
 
     connections.forEach(
@@ -1339,18 +1636,13 @@ function drawHandNetwork(
     );
 
 
-    /*
-        Nodes
-    */
-
     points.forEach(
         point => {
 
             ctx.fillStyle =
                 "#00ff9c";
 
-            ctx.shadowBlur =
-                10;
+            ctx.shadowBlur = 8;
 
             ctx.shadowColor =
                 "#00ff9c";
@@ -1363,7 +1655,7 @@ function drawHandNetwork(
                 point.y,
                 2,
                 0,
-                Math.PI*2
+                Math.PI * 2
             );
 
             ctx.fill();
@@ -1378,87 +1670,379 @@ function drawHandNetwork(
 
 
 /* =========================================================
-   HEART PARTICLES
+   DISTANCE
+========================================================= */
+
+function distance(
+    a,
+    b
+) {
+
+    const dx =
+        a.x - b.x;
+
+    const dy =
+        a.y - b.y;
+
+
+    return Math.sqrt(
+        dx * dx +
+        dy * dy
+    );
+
+}
+
+
+/* =========================================================
+   ANGLE
+========================================================= */
+
+function angle(
+    a,
+    b,
+    c
+) {
+
+    const abx =
+        a.x - b.x;
+
+    const aby =
+        a.y - b.y;
+
+
+    const cbx =
+        c.x - b.x;
+
+    const cby =
+        c.y - b.y;
+
+
+    const dot =
+        abx * cbx +
+        aby * cby;
+
+
+    const mag1 =
+        Math.sqrt(
+            abx * abx +
+            aby * aby
+        );
+
+
+    const mag2 =
+        Math.sqrt(
+            cbx * cbx +
+            cby * cby
+        );
+
+
+    if (
+        mag1 === 0 ||
+        mag2 === 0
+    ) {
+
+        return 180;
+
+    }
+
+
+    return Math.acos(
+
+        Math.max(
+            -1,
+            Math.min(
+                1,
+                dot /
+                (mag1 * mag2)
+            )
+        )
+
+    ) * 180 / Math.PI;
+
+}
+
+
+/* =========================================================
+   FINGER HEART DETECTION
+========================================================= */
+
+function detectFingerHeart(
+    hand
+) {
+
+    /*
+     * Thumb tip = 4
+     * Index tip = 8
+     */
+
+    const thumb =
+        hand[4];
+
+    const index =
+        hand[8];
+
+    const middle =
+        hand[12];
+
+    const ring =
+        hand[16];
+
+    const pinky =
+        hand[20];
+
+
+    const wrist =
+        hand[0];
+
+
+    const handSize =
+        distance(
+            wrist,
+            middle
+        );
+
+
+    if (
+        handSize < .05
+    ) {
+
+        return false;
+
+    }
+
+
+    /*
+     * Thumb and index
+     * must be close.
+     */
+
+    const thumbIndexDistance =
+        distance(
+            thumb,
+            index
+        );
+
+
+    const normalizedDistance =
+        thumbIndexDistance /
+        handSize;
+
+
+    const touching =
+        normalizedDistance <
+        .48;
+
+
+    /*
+     * Determine if the other
+     * three fingers are curled.
+     */
+
+    const middleCurl =
+        angle(
+            hand[9],
+            hand[10],
+            middle
+        );
+
+
+    const ringCurl =
+        angle(
+            hand[13],
+            hand[14],
+            ring
+        );
+
+
+    const pinkyCurl =
+        angle(
+            hand[17],
+            hand[18],
+            pinky
+        );
+
+
+    const curledCount = [
+
+        middleCurl > 115,
+
+        ringCurl > 115,
+
+        pinkyCurl > 110
+
+    ].filter(Boolean).length;
+
+
+    /*
+     * Thumb/index shape.
+     */
+
+    const thumbIndexAngle =
+        angle(
+            hand[2],
+            thumb,
+            index
+        );
+
+
+    const validShape =
+        thumbIndexAngle < 125;
+
+
+    return (
+
+        touching &&
+
+        validShape &&
+
+        curledCount >= 2
+
+    );
+
+}
+
+
+/* =========================================================
+   SMALL HEARTS
 ========================================================= */
 
 let smallHearts = [];
 
 
-class SmallHeart{
+class SmallHeart {
 
     constructor(
         x,
         y
-    ){
+    ) {
 
-        this.x =
-            x;
+        this.x = x;
+        this.y = y;
 
-        this.y =
-            y;
 
         this.vx =
-            (Math.random()-.5)
-            * 2;
+            (
+                Math.random() -
+                .5
+            ) * 4;
+
 
         this.vy =
-            -(Math.random()*2+1);
+            -(
+                Math.random() *
+                2.5 +
+                1
+            );
+
 
         this.size =
-            Math.random()*16+10;
+            Math.random() *
+            18 +
+            8;
 
-        this.alpha =
-            1;
+
+        this.alpha = 1;
+
 
         this.rotation =
-            Math.random()*.5;
+            (
+                Math.random() -
+                .5
+            ) * .8;
+
+
+        this.rotationSpeed =
+            (
+                Math.random() -
+                .5
+            ) * .035;
+
+
+        this.life = 0;
+
+
+        this.maxLife =
+            180 +
+            Math.random() * 160;
 
     }
 
 
-    update(){
+    update() {
 
         this.x +=
             this.vx;
+
 
         this.y +=
             this.vy;
 
 
         this.vy +=
-            .005;
-
-
-        this.alpha -=
             .008;
+
+
+        this.rotation +=
+            this.rotationSpeed;
+
+
+        this.life++;
+
+
+        if (
+            this.life >
+            this.maxLife - 45
+        ) {
+
+            this.alpha -=
+                .025;
+
+        }
 
     }
 
 
-    draw(){
+    draw() {
+
+        if (
+            this.alpha <= 0
+        ) {
+
+            return;
+
+        }
+
 
         ctx.save();
 
+
         ctx.globalAlpha =
-            this.alpha;
+            Math.max(
+                0,
+                this.alpha
+            );
+
 
         ctx.translate(
             this.x,
             this.y
         );
 
+
         ctx.rotate(
             this.rotation
         );
 
+
         ctx.font =
             `${this.size}px Arial`;
 
-        ctx.fillStyle =
-            "#ff70ad";
 
-        ctx.shadowBlur =
-            15;
+        ctx.fillStyle =
+            "#ff72ad";
+
+
+        ctx.shadowBlur = 15;
 
         ctx.shadowColor =
             "#ff3d91";
@@ -1479,29 +2063,58 @@ class SmallHeart{
 
 
 /* =========================================================
-   CREATE FLOATING HEARTS
+   CREATE HEARTS
 ========================================================= */
 
 function createSmallHearts(
     x,
     y,
-    amount = 25
-){
+    amount = 100
+) {
 
-    for(
-        let i=0;
-        i<amount;
+    for (
+        let i = 0;
+        i < amount;
         i++
-    ){
+    ) {
 
         smallHearts.push(
+
             new SmallHeart(
+
                 x +
-                (Math.random()*180-90),
+                (
+                    Math.random() *
+                    350 -
+                    175
+                ),
 
                 y +
-                (Math.random()*80-40)
+                (
+                    Math.random() *
+                    220 -
+                    110
+                )
+
             )
+
+        );
+
+    }
+
+
+    /*
+     * Prevent too many objects.
+     */
+
+    if (
+        smallHearts.length >
+        1000
+    ) {
+
+        smallHearts.splice(
+            0,
+            smallHearts.length - 1000
         );
 
     }
@@ -1510,90 +2123,233 @@ function createSmallHearts(
 
 
 /* =========================================================
-   BIG HEART
+   CONTINUOUS HEART RAIN
+========================================================= */
+
+let lastHeartSpawn = 0;
+
+
+function continuousHeartRain() {
+
+    /*
+     * HEARTS ONLY WORK WHEN
+     * FINGER HEART IS ACTIVE.
+     */
+
+    if (
+        !fingerHeartDetected
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        !handsData.length
+    ) {
+
+        return;
+
+    }
+
+
+    const now =
+        Date.now();
+
+
+    /*
+     * More hearts every
+     * 100 milliseconds.
+     */
+
+    if (
+        now -
+        lastHeartSpawn >
+        100
+    ) {
+
+        lastHeartSpawn =
+            now;
+
+
+        const hand =
+            handsData[0];
+
+
+        const thumb =
+            screenPoint(
+                hand[4]
+            );
+
+
+        const index =
+            screenPoint(
+                hand[8]
+            );
+
+
+        /*
+         * HEART ORIGIN
+         *
+         * Only thumb + index.
+         */
+
+        const x =
+            (
+                thumb.x +
+                index.x
+            ) / 2;
+
+
+        const y =
+            (
+                thumb.y +
+                index.y
+            ) / 2;
+
+
+        createSmallHearts(
+            x,
+            y,
+            25
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   GIANT HEART
 ========================================================= */
 
 let bigHeart = null;
 
 
-/*
-    Big heart states:
+class BigHeart {
 
-    waiting
-    floating
-    popping
-*/
+    constructor(
+        x,
+        y
+    ) {
 
-class BigHeart{
+        this.x = x;
+        this.y = y;
 
-    constructor(){
 
-        this.x =
+        this.targetX =
             W / 2;
 
-        this.y =
-            H + 100;
 
         this.targetY =
             H / 2;
 
-        this.scale =
-            .1;
 
-        this.alpha =
-            1;
+        /*
+         * Approximately 60%
+         * of the screen.
+         */
+
+        const desiredWidth =
+            Math.min(
+                W,
+                H
+            ) * .60;
+
+
+        this.targetScale =
+            desiredWidth / 190;
+
+
+        this.scale =
+            .05;
+
+
+        this.alpha = 1;
+
 
         this.state =
             "floating";
 
-        this.timer =
-            0;
+
+        this.timer = 0;
+
 
         this.particles = [];
 
     }
 
 
-    update(){
+    update() {
 
-        if(
+        if (
             this.state ===
             "floating"
-        ){
+        ) {
 
             /*
-                Float upward.
-            */
+             * Move to center.
+             */
+
+            this.x +=
+                (
+                    this.targetX -
+                    this.x
+                ) * .055;
+
 
             this.y +=
                 (
                     this.targetY -
                     this.y
-                ) * .045;
-
-
-            this.scale +=
-                (.95-this.scale)
-                * .06;
+                ) * .055;
 
 
             /*
-                Once in middle,
-                wait then pop.
-            */
+             * Grow.
+             */
 
-            if(
+            this.scale +=
+                (
+                    this.targetScale -
+                    this.scale
+                ) * .055;
+
+
+            /*
+             * Wait until fully grown.
+             */
+
+            if (
+
+                Math.abs(
+                    this.x -
+                    this.targetX
+                ) < 5
+
+                &&
+
                 Math.abs(
                     this.y -
                     this.targetY
                 ) < 5
-            ){
+
+                &&
+
+                Math.abs(
+                    this.scale -
+                    this.targetScale
+                ) < .03
+
+            ) {
 
                 this.timer++;
 
-                if(
-                    this.timer > 45
-                ){
+
+                if (
+                    this.timer > 35
+                ) {
 
                     this.pop();
 
@@ -1603,29 +2359,28 @@ class BigHeart{
 
         }
 
-
-        else if(
+        else if (
             this.state ===
             "popping"
-        ){
+        ) {
 
             this.scale +=
-                .18;
+                .13;
 
             this.alpha -=
-                .055;
+                .045;
 
         }
 
     }
 
 
-    pop(){
+    pop() {
 
-        if(
+        if (
             this.state !==
             "floating"
-        ){
+        ) {
 
             return;
 
@@ -1637,44 +2392,50 @@ class BigHeart{
 
 
         /*
-            Create explosion
-            particles.
-        */
+         * Giant heart explosion.
+         */
 
-        for(
-            let i=0;
-            i<70;
+        for (
+            let i = 0;
+            i < 200;
             i++
-        ){
+        ) {
 
-            const angle =
+            const a =
                 Math.random() *
                 Math.PI *
                 2;
 
 
             const speed =
-                Math.random()*6+2;
+                Math.random() *
+                12 +
+                2;
 
 
             this.particles.push({
 
-                x:this.x,
+                x:
+                    this.x,
 
-                y:this.y,
+                y:
+                    this.y,
 
                 vx:
-                    Math.cos(angle)
-                    * speed,
+                    Math.cos(a) *
+                    speed,
 
                 vy:
-                    Math.sin(angle)
-                    * speed,
+                    Math.sin(a) *
+                    speed,
 
                 size:
-                    Math.random()*5+2,
+                    Math.random() *
+                    8 +
+                    2,
 
-                alpha:1
+                alpha:
+                    1
 
             });
 
@@ -1682,12 +2443,25 @@ class BigHeart{
 
 
         /*
-            Show message.
-        */
+         * Massive heart shower.
+         */
+
+        createSmallHearts(
+            this.x,
+            this.y,
+            350
+        );
+
+
+        /*
+         * Message.
+         */
 
         loveMessage
             .classList
-            .add("show");
+            .add(
+                "show"
+            );
 
 
         setTimeout(
@@ -1695,52 +2469,59 @@ class BigHeart{
 
                 loveMessage
                     .classList
-                    .remove("show");
+                    .remove(
+                        "show"
+                    );
 
             },
-            4000
+            5500
         );
 
     }
 
 
-    draw(){
+    draw() {
 
         /*
-            Draw main heart
-        */
+         * Main giant heart.
+         */
 
-        if(
+        if (
             this.alpha > 0
-        ){
+        ) {
 
             ctx.save();
+
 
             ctx.translate(
                 this.x,
                 this.y
             );
 
+
             ctx.scale(
                 this.scale,
                 this.scale
             );
+
 
             ctx.globalAlpha =
                 this.alpha;
 
 
             ctx.shadowBlur =
-                35;
+                55;
+
 
             ctx.shadowColor =
-                "#ff4f9b";
+                "#ff3d91";
+
 
             ctx.fillStyle =
                 "#ff5b9d";
 
 
-            drawHeartShape(
+            drawHeart(
                 ctx
             );
 
@@ -1751,8 +2532,8 @@ class BigHeart{
 
 
         /*
-            Draw explosion
-        */
+         * Explosion particles.
+         */
 
         this.particles.forEach(
             particle => {
@@ -1760,29 +2541,40 @@ class BigHeart{
                 particle.x +=
                     particle.vx;
 
+
                 particle.y +=
                     particle.vy;
+
 
                 particle.vx *=
                     .97;
 
+
                 particle.vy *=
                     .97;
 
+
                 particle.alpha -=
-                    .018;
+                    .014;
 
 
                 ctx.save();
 
+
                 ctx.globalAlpha =
-                    particle.alpha;
+                    Math.max(
+                        0,
+                        particle.alpha
+                    );
+
 
                 ctx.fillStyle =
                     "#ff77b3";
 
+
                 ctx.shadowBlur =
-                    12;
+                    18;
+
 
                 ctx.shadowColor =
                     "#ff3d91";
@@ -1790,15 +2582,18 @@ class BigHeart{
 
                 ctx.beginPath();
 
+
                 ctx.arc(
                     particle.x,
                     particle.y,
                     particle.size,
                     0,
-                    Math.PI*2
+                    Math.PI * 2
                 );
 
+
                 ctx.fill();
+
 
                 ctx.restore();
 
@@ -1814,36 +2609,40 @@ class BigHeart{
    HEART SHAPE
 ========================================================= */
 
-function drawHeartShape(
+function drawHeart(
     context
-){
+) {
 
     context.beginPath();
 
+
     context.moveTo(
         0,
-        35
+        42
     );
 
 
     context.bezierCurveTo(
-        -80,
-        -15,
-        -45,
-        -70,
+        -95,
+        -20,
+        -75,
+        -105,
         0,
-        -30
+        -53
     );
 
 
     context.bezierCurveTo(
-        45,
-        -70,
-        80,
-        -15,
+        75,
+        -105,
+        95,
+        -20,
         0,
-        35
+        42
     );
+
+
+    context.closePath();
 
 
     context.fill();
@@ -1852,192 +2651,49 @@ function drawHeartShape(
 
 
 /* =========================================================
-   FINGER HEART DETECTION
+   TRIGGER LOVE
 ========================================================= */
 
-
-/*
-    This detects when:
-
-        thumb tip
-             ↓
-             ●
-              \
-               \
-                ●
-            index tip
-
-    are close together.
-
-    Additional angle checks help
-    distinguish it from an open hand.
-*/
-
-
-let fingerHeartDetected =
-    false;
-
-let lastHeartTrigger =
-    0;
-
-let heartCooldown =
-    5000;
-
-
-function distance(
-    a,
-    b
-){
-
-    const dx =
-        a.x-b.x;
-
-    const dy =
-        a.y-b.y;
-
-    return Math.sqrt(
-        dx*dx+dy*dy
-    );
-
-}
-
-
-function detectFingerHeart(
-    hand
-){
-
-    const thumb =
-        hand[4];
-
-    const index =
-        hand[8];
-
-    const indexBase =
-        hand[5];
-
-    const thumbBase =
-        hand[2];
-
-
-    /*
-        Distance between
-        thumb and index.
-    */
-
-    const tipDistance =
-        distance(
-            thumb,
-            index
-        );
-
-
-    /*
-        Distance normalized
-        against hand size.
-    */
-
-    const handSize =
-        distance(
-            hand[0],
-            hand[9]
-        );
-
-
-    const normalized =
-        tipDistance /
-        handSize;
-
-
-    /*
-        Finger heart requires
-        thumb and index tips
-        to be close.
-    */
-
-    const touching =
-        normalized < .65;
-
-
-    /*
-        Check that index finger
-        and thumb are actually
-        pointing toward each other.
-    */
-
-    const thumbIndexDistance =
-        distance(
-            thumb,
-            indexBase
-        );
-
-
-    const indexThumbDistance =
-        distance(
-            index,
-            thumbBase
-        );
-
-
-    const pointingToward =
-        thumbIndexDistance <
-        handSize * 1.8 &&
-        indexThumbDistance <
-        handSize * 1.8;
-
-
-    const result =
-        touching &&
-        pointingToward;
-
-
-    return result;
-
-}
-
-
-/* =========================================================
-   TRIGGER LOVE EVENT
-========================================================= */
-
-function triggerLove(){
+function triggerLove() {
 
     const now =
         Date.now();
 
 
     /*
-        Prevent repeated triggers.
-    */
+     * Prevent constant triggering.
+     */
 
-    if(
+    if (
         now -
-        lastHeartTrigger <
-        heartCooldown
-    ){
+        lastLoveTrigger <
+        LOVE_COOLDOWN
+    ) {
 
         return;
 
     }
 
 
-    lastHeartTrigger =
+    lastLoveTrigger =
         now;
 
 
-    /*
-        Get center of gesture.
-    */
-
     let centerX =
-        W/2;
+        W / 2;
+
 
     let centerY =
-        H/2;
+        H / 2;
 
 
-    if(
+    /*
+     * Get finger-heart position.
+     */
+
+    if (
         handsData.length
-    ){
+    ) {
 
         const hand =
             handsData[0];
@@ -2047,6 +2703,7 @@ function triggerLove(){
             screenPoint(
                 hand[4]
             );
+
 
         const index =
             screenPoint(
@@ -2071,45 +2728,26 @@ function triggerLove(){
 
 
     /*
-        Massive heart burst
-        from the finger-heart.
-    */
+     * Initial heart explosion.
+     */
 
     createSmallHearts(
         centerX,
         centerY,
-        45
+        300
     );
 
 
     /*
-        Create big floating heart.
-    */
+     * Giant heart.
+     */
 
     bigHeart =
-        new BigHeart();
+        new BigHeart(
+            centerX,
+            centerY + 100
+        );
 
-
-    /*
-        Start at gesture
-        location instead of
-        bottom.
-    */
-
-    bigHeart.x =
-        centerX;
-
-    bigHeart.y =
-        centerY + 80;
-
-
-    bigHeart.targetY =
-        H/2;
-
-
-    /*
-        Change status.
-    */
 
     gestureText.textContent =
         "LOVE DETECTED ❤️";
@@ -2123,24 +2761,6 @@ function triggerLove(){
     status.textContent =
         "LOVE ACTIVE";
 
-
-    setTimeout(
-        () => {
-
-            gesture.classList.remove(
-                "active"
-            );
-
-            gestureText.textContent =
-                "SEARCHING";
-
-            status.textContent =
-                "ACTIVE";
-
-        },
-        3500
-    );
-
 }
 
 
@@ -2150,64 +2770,127 @@ function triggerLove(){
 
 function onResults(
     results
-){
+) {
 
-    if(
-        results.multiHandLandmarks &&
+    if (
+
+        results.multiHandLandmarks
+        &&
         results.multiHandLandmarks.length
-    ){
+
+    ) {
 
         handsData =
             results.multiHandLandmarks;
 
 
-        status.textContent =
-            "ACTIVE";
-
-
         /*
-            Check first hand.
-        */
+         * Detect finger heart.
+         */
 
-        const isHeart =
+        const currentHeart =
             detectFingerHeart(
                 handsData[0]
             );
 
 
-        if(isHeart){
+        fingerHeartDetected =
+            currentHeart;
 
-            if(
-                !fingerHeartDetected
-            ){
 
-                fingerHeartDetected =
-                    true;
+        /*
+         * Trigger ONLY when the
+         * gesture changes from
+         * false → true.
+         */
 
-                triggerLove();
+        if (
 
-            }
+            currentHeart
+            &&
+            !previousFingerHeart
+
+        ) {
+
+            triggerLove();
 
         }
-        else{
 
-            fingerHeartDetected =
-                false;
+
+        previousFingerHeart =
+            currentHeart;
+
+
+        /*
+         * Status.
+         */
+
+        if (
+            currentHeart
+        ) {
+
+            status.textContent =
+                "FINGER HEART ❤️";
+
+        }
+
+        else {
+
+            status.textContent =
+                "HAND DETECTED";
+
+        }
+
+
+        /*
+         * Gesture indicator.
+         */
+
+        if (
+            currentHeart
+        ) {
+
+            gestureText.textContent =
+                "ACTIVE ❤️";
+
+            gesture.classList.add(
+                "active"
+            );
+
+        }
+
+        else {
+
+            gestureText.textContent =
+                "SEARCHING";
+
+            gesture.classList.remove(
+                "active"
+            );
 
         }
 
     }
 
-    else{
+    else {
 
-        handsData =
-            [];
+        handsData = [];
 
         fingerHeartDetected =
             false;
 
+        previousFingerHeart =
+            false;
+
         status.textContent =
             "SEARCHING";
+
+        gestureText.textContent =
+            "SEARCHING";
+
+        gesture.classList.remove(
+            "active"
+        );
 
     }
 
@@ -2218,7 +2901,7 @@ function onResults(
    MAIN ANIMATION
 ========================================================= */
 
-function animate(){
+function animate() {
 
     ctx.clearRect(
         0,
@@ -2228,9 +2911,9 @@ function animate(){
     );
 
 
-    /*
-        AI hand skeleton
-    */
+    /* =====================================================
+       HAND
+    ===================================================== */
 
     handsData.forEach(
         hand => {
@@ -2243,9 +2926,14 @@ function animate(){
     );
 
 
-    /*
-        Flowers
-    */
+    /* =====================================================
+       🌸 FLOWERS
+       
+       ALWAYS controlled by
+       fingertips.
+       
+       NOT finger-heart.
+    ===================================================== */
 
     updateFlowers();
 
@@ -2261,14 +2949,30 @@ function animate(){
     );
 
 
-    /*
-        Floating hearts
-    */
+    flowers =
+        flowers.filter(
+            flower =>
+                flower.life <
+                flower.maxLife
+        );
+
+
+    /* =====================================================
+       ❤️ HEARTS
+       
+       ONLY finger-heart.
+    ===================================================== */
+
+    continuousHeartRain();
+
 
     smallHearts =
         smallHearts.filter(
             heart =>
                 heart.alpha > 0
+                &&
+                heart.life <
+                heart.maxLife
         );
 
 
@@ -2283,27 +2987,29 @@ function animate(){
     );
 
 
-    /*
-        Big heart
-    */
+    /* =====================================================
+       ❤️ GIANT HEART
+    ===================================================== */
 
-    if(bigHeart){
+    if (
+        bigHeart
+    ) {
 
         bigHeart.update();
 
         bigHeart.draw();
 
 
-        /*
-            Remove after explosion.
-        */
+        if (
 
-        if(
             bigHeart.state ===
-                "popping" &&
+                "popping"
+
+            &&
 
             bigHeart.alpha <= 0
-        ){
+
+        ) {
 
             bigHeart =
                 null;
@@ -2324,33 +3030,37 @@ function animate(){
    START CAMERA
 ========================================================= */
 
-async function startCamera(){
+async function startCamera() {
 
-    try{
+    try {
+
+        status.textContent =
+            "REQUESTING CAMERA";
+
 
         const stream =
             await navigator
-            .mediaDevices
-            .getUserMedia({
+                .mediaDevices
+                .getUserMedia({
 
-                video:{
+                    video: {
 
-                    width:{
-                        ideal:1280
+                        width: {
+                            ideal: 1280
+                        },
+
+                        height: {
+                            ideal: 720
+                        },
+
+                        facingMode:
+                            "user"
+
                     },
 
-                    height:{
-                        ideal:720
-                    },
+                    audio: false
 
-                    facingMode:
-                        "user"
-
-                },
-
-                audio:false
-
-            });
+                });
 
 
         video.srcObject =
@@ -2365,22 +3075,27 @@ async function startCamera(){
 
 
         status.textContent =
-            "LOADING";
+            "LOADING AI";
 
 
         initializeAI();
 
     }
 
-    catch(error){
+    catch (error) {
 
         console.error(
             error
         );
 
 
+        status.textContent =
+            "CAMERA ERROR";
+
+
         alert(
-            "Please allow camera access."
+            "Please allow camera access. " +
+            "This effect needs your camera."
         );
 
     }
@@ -2389,10 +3104,10 @@ async function startCamera(){
 
 
 /* =========================================================
-   INITIALIZE MEDIAPIPE
+   MEDIAPIPE
 ========================================================= */
 
-function initializeAI(){
+function initializeAI() {
 
     const hands =
         new Hands({
@@ -2413,17 +3128,15 @@ function initializeAI(){
 
     hands.setOptions({
 
-        maxNumHands:
-            2,
+        maxNumHands: 2,
 
-        modelComplexity:
-            1,
+        modelComplexity: 1,
 
         minDetectionConfidence:
-            .60,
+            .65,
 
         minTrackingConfidence:
-            .60
+            .65
 
     });
 
@@ -2433,11 +3146,11 @@ function initializeAI(){
     );
 
 
-    async function process(){
+    async function process() {
 
-        if(
+        if (
             video.readyState >= 2
-        ){
+        ) {
 
             await hands.send({
 
@@ -2462,7 +3175,7 @@ function initializeAI(){
 
 
 /* =========================================================
-   START
+   START BUTTON
 ========================================================= */
 
 startButton.addEventListener(
@@ -2480,4 +3193,5 @@ animate();
 </script>
 
 </body>
+
 </html>
